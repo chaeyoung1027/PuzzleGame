@@ -51,15 +51,24 @@ int main(void)
 
 					if (grid[y + 1][x] == 16) { dy = 1; dx = 0; } //밑으로 움직임
 					else if (grid[y - 1][x] == 16) { dy = -1; dx = 0; } //아래로
-					else if (grid[y][x+1] == 16) { dy = 0; dx = 1; } //오른쪽으로 
-					else if (grid[y][x-1] == 16) { dy = 0; dx = -1; } //왼쪽으로
-					
+					else if (grid[y][x + 1] == 16) { dy = 0; dx = 1; } //오른쪽으로 
+					else if (grid[y][x - 1] == 16) { dy = 0; dx = -1; } //왼쪽으로
+
 
 					//마우스로 누른 타일과 빈 칸의 위치바꿈
 					int temp = grid[y][x];
 					grid[y][x] = 16;
 					grid[y + dy][x + dx] = temp;
 
+					//애니메이션
+					sprite[16].move(-dx * (float)w, -dy * (float)w);
+					float speed = 3.f;
+
+					for (int i = 0; i < w; i += (int)speed) {
+						sprite[temp].move(speed * dx, speed * dy);
+						app.draw(sprite[16]);
+						app.draw(sprite[temp]);
+						app.display();
 					}
 				}
 			}
