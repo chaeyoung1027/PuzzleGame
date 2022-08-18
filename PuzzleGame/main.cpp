@@ -60,15 +60,6 @@ int main(void)
 					grid[y][x] = 16;
 					grid[y + dy][x + dx] = temp;
 
-					//애니메이션
-					sprite[16].move(-dx * (float)w, -dy * (float)w);
-					float speed = 3.f;
-
-					for (int i = 0; i < w; i += (int)speed) {
-						sprite[temp].move(speed * dx, speed * dy);
-						app.draw(sprite[16]);
-						app.draw(sprite[temp]);
-						app.display();
 					}
 				}
 			}
