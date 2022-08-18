@@ -51,9 +51,9 @@ int main(void)
 
 					if (grid[y + 1][x] == 16) { dy = 1; dx = 0; } //밑으로 움직임
 					else if (grid[y - 1][x] == 16) { dy = -1; dx = 0; } //아래로
-					else if (grid[y][x + 1] == 16) { dy = 0; dx = 1; } //오른쪽으로 
-					else if (grid[y][x - 1] == 16) { dy = 0; dx = -1; } //왼쪽으로
-
+					else if (grid[y][x+1] == 16) { dy = 0; dx = 1; } //오른쪽으로 
+					else if (grid[y][x-1] == 16) { dy = 0; dx = -1; } //왼쪽으로
+					
 
 					//마우스로 누른 타일과 빈 칸의 위치바꿈
 					int temp = grid[y][x];
